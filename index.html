@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Radiology AI — Interactive Diagnostics Workspace</title>
+  <meta name="description" content="Upload a brain MRI scan and receive an AI-assisted radiology report in seconds. Built to support professional diagnosis.">
+
+  <!-- Tailwind CSS Core Foundations -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Core Google Typography Layer -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom UI/UX Stylesheet Links -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <nav class="glass-strong mx-3 mt-3 sm:mx-6 sm:mt-4 rounded-2xl shadow-[0_8px_30px_-12px_rgba(20,50,140,0.25)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2.5 group">
+          <span class="relative w-10 h-10 rounded-xl grad-bg flex items-center justify-center shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-brain text-white text-lg"></i>
+            <span class="absolute inset-0 rounded-xl border-2 border-white/40 pulse-ring"></span>
+          </span>
+          <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-[var(--ink)]">Brain Radiology <span class="grad-text">AI</span></span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-9 font-medium text-[15px] text-[var(--ink-soft)]">
+          <a href="#home" class="nav-link hover:text-[var(--ink)] transition">Home</a>
+          <a href="#about" class="nav-link hover:text-[var(--ink)] transition">About Platform</a>
+          <a href="#how-it-works" class="nav-link hover:text-[var(--ink)] transition">How It Works</a>
+          <a href="#workspace" class="nav-link hover:text-[var(--ink)] transition">Analysis Workspace</a>
+        </div>
+
+        <div class="hidden lg:flex items-center">
+          <a href="#workspace" class="btn-primary rounded-xl px-5 py-2.5 text-sm font-semibold text-white">
+            Open Workspace
+          </a>
+        </div>
+
+        <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-xl border border-[var(--line)] flex items-center justify-center">
+          <i class="fa-solid fa-bars text-[var(--ink)]"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div id="mobileMenu" class="lg:hidden hidden px-4 pb-4 border-t border-[var(--line)] mt-1">
+        <div class="flex flex-col gap-3 pt-3 text-[var(--ink-soft)] font-medium">
+          <a href="#home" class="py-1.5 mobile-nav-link">Home</a>
+          <a href="#about" class="py-1.5 mobile-nav-link">About Platform</a>
+          <a href="#how-it-works" class="py-1.5 mobile-nav-link">How It Works</a>
+          <a href="#workspace" class="py-1.5 mobile-nav-link">Analysis Workspace</a>
+          <div class="pt-2">
+            <a href="#workspace" class="btn-primary rounded-xl px-4 py-2.5 text-sm font-semibold text-white block text-center mobile-nav-link">Open Workspace</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ HERO MARKETING FIELD ============ -->
+  <section id="home" class="relative pt-40 pb-24 sm:pt-48 sm:pb-32 px-4 sm:px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold text-[var(--blue-deep)] mb-6 font-mono tracking-wide">
+          <span class="badge-dot bg-[var(--violet)] animate-pulse"></span>
+          CLINICAL DECISION SUPPORT SYSTEM
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-[var(--ink)]">
+          AI-Powered <span class="grad-text">Brain MRI</span> Diagnostics
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-[var(--ink-soft)] leading-relaxed max-w-xl">
+          Securely register case details, process high-resolution structural MRI scans, and generate dynamic computer-assisted analysis reports for clinical verification loop systems.
+        </p>
+        <div class="mt-9 flex flex-col sm:flex-row gap-3.5">
+          <a href="#workspace" class="btn-primary rounded-xl px-7 py-3.5 text-sm font-semibold text-white text-center">
+            <i class="fa-solid fa-microscope mr-2"></i>Launch Diagnostic Suite
+          </a>
+          <a href="#about" class="btn-ghost rounded-xl px-7 py-3.5 text-sm font-semibold text-[var(--ink)] text-center">
+            System Overview <i class="fa-solid fa-arrow-right-long ml-1.5"></i>
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-8 flex-wrap">
+          <div class="flex items-center gap-2 text-sm text-[var(--ink-soft)]"><i class="fa-solid fa-lock text-[var(--blue)]"></i> Localized Session Isolation</div>
+          <div class="flex items-center gap-2 text-sm text-[var(--ink-soft)]"><i class="fa-solid fa-user-doctor text-[var(--violet)]"></i> Clinical Support Ready</div>
+          <div class="flex items-center gap-2 text-sm text-[var(--ink-soft)]"><i class="fa-solid fa-bolt text-[var(--blue)]"></i> AI-Powred System</div>
+        </div>
+      </div>
+
+      <!-- Hero Brain Animation Render Frame -->
+      <div class="relative reveal">
+        <div class="relative mx-auto max-w-md aspect-square">
+          <div class="absolute inset-0 rounded-[2.5rem] glass-strong shadow-2xl shadow-blue-900/10 overflow-hidden">
+            <div class="scan-line"></div>
+            <svg viewBox="0 0 400 400" class="w-full h-full p-10 float" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="brainGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#14328C"/>
+                  <stop offset="55%" stop-color="#3366FF"/>
+                  <stop offset="100%" stop-color="#7C3AED"/>
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="200" cy="200" r="170" fill="url(#glow)"/>
+              <path d="M132 128c-8-22 8-46 32-50 10-14 30-18 44-8 18-6 38 4 44 22 20 4 32 22 28 42 12 10 16 28 6 40 6 16-4 32-20 36-2 16-16 28-32 26-10 12-28 14-40 4-16 8-34 0-40-16-18-2-30-18-28-36-14-8-18-26-8-40-8-14-2-32 14-40Z" fill="url(#brainGrad)" opacity="0.92"/>
+              <g stroke="#EAF0FF" stroke-width="2" fill="none" opacity="0.85" stroke-linecap="round">
+                <path d="M150 150c14-10 26-4 30 6"/><path d="M168 132c6 10 2 22-8 26"/><path d="M190 140c10-6 22 0 24 12"/><path d="M210 128c4 12-2 22-12 26"/><path d="M230 145c12-4 22 4 22 16"/><path d="M160 180c10 6 8 20-2 26"/><path d="M185 175c8-8 22-6 26 4"/><path d="M215 178c10-4 22 2 24 14"/><path d="M150 205c8 8 22 6 26-4"/><path d="M180 210c6 10 20 10 26 0"/><path d="M210 205c8 10 22 8 28-2"/>
+              </g>
+              <g fill="#EAF0FF">
+                <circle cx="150" cy="150" r="2.6"/><circle cx="190" cy="140" r="2.6"/><circle cx="230" cy="145" r="2.6"/><circle cx="160" cy="180" r="2.6"/><circle cx="215" cy="178" r="2.6"/><circle cx="180" cy="210" r="2.6"/>
+              </g>
+            </svg>
+          </div>
+          <div class="absolute -bottom-6 -left-6 glass-strong rounded-2xl px-5 py-3.5 shadow-xl flex items-center gap-3 float">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-check text-emerald-600"></i>
+            </div>
+            <div>
+              <p class="text-[11px] font-mono text-[var(--ink-soft)] uppercase tracking-wide">Analysis Engine</p>
+              <p class="text-sm font-semibold text-[var(--ink)]">Local Latency Nominal</p>
+            </div>
+          </div>
+          <div class="absolute -top-5 -right-4 glass-strong rounded-2xl px-4 py-3 shadow-xl float">
+            <i class="fa-solid fa-shield-heart text-[var(--violet)] mr-1.5"></i>
+            <span class="text-xs font-semibold text-[var(--ink)]">HIPAA-Compliant Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SYSTEM SECTION ============ -->
+  <section id="about" class="relative py-20 sm:py-28 px-4 sm:px-6 border-t border-[var(--line)]">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-14 reveal">
+        <p class="font-mono text-xs font-semibold tracking-widest text-[var(--violet)] uppercase mb-3">Core Platform Capabilities</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[var(--ink)] tracking-tight">Computer-Assisted Neuroimaging Inspection</h2>
+        <p class="mt-4 text-[var(--ink-soft)] leading-relaxed">
+          Brain Radiology AI orchestrates state-of-the-art matrix feature mapping and standard radiological text synthesizers to deliver robust, predictable, second-layer spatial oversight.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card glass rounded-2xl p-6 reveal">
+          <div class="w-12 h-12 rounded-xl grad-bg flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-address-card text-white"></i>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-2">1. Patient Mapping</h3>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Isolate metadata parameters cleanly within client state systems to secure structural trace linkages.</p>
+        </div>
+        <div class="card glass rounded-2xl p-6 reveal">
+          <div class="w-12 h-12 rounded-xl grad-bg flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-microscope text-white"></i>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-2">2. Tensor Alignment</h3>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Parse standard image file matrices through histogram equalization algorithms and spatial cross-checks.</p>
+        </div>
+        <div class="card glass rounded-2xl p-6 reveal">
+          <div class="w-12 h-12 rounded-xl grad-bg flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-code-branch text-white"></i>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-2">3. Pattern Isolation</h3>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Evaluate structural voxel variances against benchmark anomalies to generate deterministic inferences.</p>
+        </div>
+        <div class="card glass rounded-2xl p-6 reveal">
+          <div class="w-12 h-12 rounded-xl grad-bg flex items-center justify-center mb-5 shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-signature text-white"></i>
+          </div>
+          <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-2">4. Clinical Review</h3>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Export structured findings directly into professional document formats for licensed practitioner validation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS FLOWCHART ============ -->
+  <section id="how-it-works" class="relative py-20 sm:py-28 px-4 sm:px-6 bg-gradient-to-b from-transparent via-[rgba(51,102,255,0.02)] to-transparent">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="font-mono text-xs font-semibold tracking-widest text-[var(--violet)] uppercase mb-3">System Pipeline Sequence</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-[var(--ink)] tracking-tight">The Analysis Lifecycle</h2>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute top-9 left-[12%] right-[12%] h-0.5 step-line rounded-full opacity-30"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+          <div class="relative text-center lg:text-left reveal">
+            <div class="relative mx-auto lg:mx-0 w-[72px] h-[72px] rounded-2xl grad-bg flex items-center justify-center shadow-xl shadow-blue-500/25 mb-5">
+              <i class="fa-solid fa-id-card text-white text-2xl"></i>
+              <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white glass-strong flex items-center justify-center font-mono text-xs font-bold text-[var(--blue-deep)] shadow">1</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-1.5">Register Case Data</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Map required patient criteria to structural diagnostic report parameters.</p>
+          </div>
+
+          <div class="relative text-center lg:text-left reveal">
+            <div class="relative mx-auto lg:mx-0 w-[72px] h-[72px] rounded-2xl grad-bg flex items-center justify-center shadow-xl shadow-blue-500/25 mb-5">
+              <i class="fa-solid fa-cloud-arrow-up text-white text-2xl"></i>
+              <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white glass-strong flex items-center justify-center font-mono text-xs font-bold text-[var(--blue-deep)] shadow">2</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-1.5">Upload Scan File</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Ingest high-resolution structural MRI slices into workspace session memory layers.</p>
+          </div>
+
+          <div class="relative text-center lg:text-left reveal">
+            <div class="relative mx-auto lg:mx-0 w-[72px] h-[72px] rounded-2xl grad-bg flex items-center justify-center shadow-xl shadow-blue-500/25 mb-5">
+              <i class="fa-solid fa-gear text-white text-2xl spin-slow"></i>
+              <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white glass-strong flex items-center justify-center font-mono text-xs font-bold text-[var(--blue-deep)] shadow">3</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-1.5">Execute Processing</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Run automated preprocessing and inference matrix evaluation algorithms.</p>
+          </div>
+
+          <div class="relative text-center lg:text-left reveal">
+            <div class="relative mx-auto lg:mx-0 w-[72px] h-[72px] rounded-2xl grad-bg flex items-center justify-center shadow-xl shadow-blue-500/25 mb-5">
+              <i class="fa-solid fa-file-invoice text-white text-2xl"></i>
+              <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-white glass-strong flex items-center justify-center font-mono text-xs font-bold text-[var(--blue-deep)] shadow">4</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-[var(--ink)] mb-1.5">Review Analysis</h3>
+            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Inspect findings, visualize metrics, and print or export clinical reports.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTEGRATED APPLICATION WORKSPACE ============ -->
+  <section id="workspace" class="relative py-20 sm:py-28 px-4 sm:px-6 border-t border-[var(--line)] bg-[#FDFEFF]">
+    <div id="mri-app-workflow" class="app-workflow-container">
+      
+      <!-- PIPELINE STEP CONTROLLER HEADERS -->
+      <div class="workflow-stepper glass">
+        <div class="step-indicator active" id="badge-step-1">
+          <span class="step-num">1</span>
+          <span class="step-label">Patient Info</span>
+        </div>
+        <div class="step-line-segment"></div>
+        <div class="step-indicator" id="badge-step-2">
+          <span class="step-num">2</span>
+          <span class="step-label">MRI Upload</span>
+        </div>
+        <div class="step-line-segment"></div>
+        <div class="step-indicator" id="badge-step-3">
+          <span class="step-num">3</span>
+          <span class="step-label">AI Processing</span>
+        </div>
+        <div class="step-line-segment"></div>
+        <div class="step-indicator" id="badge-step-4">
+          <span class="step-num">4</span>
+          <span class="step-label">Analysis Result</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: PATIENT REGISTRATION FORM -->
+      <section id="step-patient-info" class="workflow-section reveal-anim">
+        <div class="form-card glass-strong">
+          <div class="form-header">
+            <div class="icon-wrap-small"><i class="fa-solid fa-id-card"></i></div>
+            <div>
+              <h2>Patient Registration</h2>
+              <p>Input patient registration parameters for data correlation and report matching.</p>
+            </div>
+          </div>
+          
+          <form id="patientDetailsForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="pat-name">Full Name <span class="req-star">*</span></label>
+                <input type="text" id="pat-name" required placeholder="John Doe">
+                <span class="error-msg">Please enter full patient name</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="pat-gender">Gender <span class="req-star">*</span></label>
+                <select id="pat-gender" required>
+                  <option value="" disabled selected>Select biological sex</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other / Non-Binary</option>
+                </select>
+                <span class="error-msg">Please select clinical gender</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="pat-dob">Date of Birth <span class="req-star">*</span></label>
+                <input type="date" id="pat-dob" required>
+                <span class="error-msg">Please declare a valid birthdate</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="pat-phone">Contact Phone <span class="req-star">*</span></label>
+                <input type="tel" id="pat-phone" required placeholder="+1 (555) 000-0000">
+                <span class="error-msg">Valid phone entry required</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="pat-email">Email Address <span class="opt-tag">(Optional)</span></label>
+                <input type="email" id="pat-email" placeholder="patient@healthcare.net">
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="pat-doctor">Referring Clinician / Staff Medical ID <span class="opt-tag">(Optional)</span></label>
+                <input type="text" id="pat-doctor" placeholder="Dr. Evelyn Thorne, MD — Radiographical Sciences Unit">
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="pat-notes">Clinical Indications & Observations <span class="opt-tag">(Optional)</span></label>
+                <textarea id="pat-notes" rows="3" placeholder="Describe symptoms, known history, or imaging targets (e.g., persistent cephalalgia, follow-up screening sequence logs)..."></textarea>
+              </div>
+            </div>
+            
+            <div class="form-actions-row">
+              <button type="button" id="btn-cancel-form" class="btn-ghost-custom">Clear Entries</button>
+              <button type="submit" id="btn-submit-form" class="btn-primary-custom">
+                Save & Continue <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- STEP 2: IMAGE UPLOAD / DIGITIZATION MATRIX -->
+      <section id="step-mri-upload" class="workflow-section hidden-element">
+        <div class="upload-wrapper glass-strong">
+          <div class="section-title-block">
+            <h2>Ingest Neural MRI Dataset</h2>
+            <p>Upload a structural brain MRI scan slice image. Supported diagnostic array structures include standard pixel tracking vectors (PNG/JPG).</p>
+          </div>
+          
+          <div id="mriDragDropZone" class="mri-drop-zone-card">
+            <input type="file" id="mriFileInput" accept="image/*" class="native-hidden-input">
+            
+            <div id="dropzone-default-content" class="dropzone-inner-flex">
+              <div class="icon-glow-container float"><i class="fa-solid fa-cloud-arrow-up text-gradient-icon"></i></div>
+              <h3>Drag and drop neuroimaging asset file here</h3>
+              <p class="file-spec-sub">Standard high-resolution scans matrix formats up to 25MB</p>
+              <button type="button" id="btn-trigger-browse" class="btn-primary-custom">Browse File Directory</button>
+            </div>
+            
+            <div id="dropzone-preview-content" class="dropzone-inner-flex hidden-element">
+              <div class="preview-frame">
+                <div class="scan-matrix-line"></div>
+                <img id="mriImagePreview" src="" alt="Neural Sequence Asset View">
+              </div>
+              <div class="meta-file-info">
+                <span id="meta-file-name" class="fname-lbl">asset_sequence_matrix.png</span>
+                <span id="meta-file-size" class="fsize-lbl">0.00 MB</span>
+              </div>
+              <div class="preview-controls">
+                <button type="button" id="btn-remove-asset" class="btn-ghost-custom text-danger">Remove File</button>
+                <button type="button" id="btn-start-analysis" class="btn-primary-custom">
+                  <i class="fa-solid fa-microscope mr-2"></i>Execute AI Processing Pipeline
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3: SYSTEM RUNTIME INFERENCE TICKER -->
+      <section id="step-processing" class="workflow-section hidden-element">
+        <div class="processing-card glass-strong">
+          <div class="spinner-outer-ring">
+            <div class="radar-scan-arc"></div>
+            <div class="spinner-inner-core"><i class="fa-solid fa-brain processing-core-icon"></i></div>
+          </div>
+          <h2 id="processing-title-text">Initializing Tensor Network Core...</h2>
+          <p id="processing-current-status" class="status-ticker-text">Mapping sequence spatial orientations into voxel array sets...</p>
+          
+          <div class="progress-bar-track">
+            <div id="processing-progress-fill" class="progress-bar-fill-gradient" style="width: 0%"></div>
+          </div>
+          <span id="processing-percentage-lbl" class="percentage-display-mono">0%</span>
+        </div>
+      </section>
+
+      <!-- STEP 4: INTERACTIVE DIAGNOSTIC INSIGHT DASHBOARD -->
+      <section id="step-result" class="workflow-section hidden-element">
+        <div class="result-dashboard-grid">
+          <div class="result-panel-left glass-strong">
+            <div class="result-image-container">
+              <div class="static-grid-overlay"></div>
+              <img id="result-mri-display" src="" alt="Target Analysis Output Vector">
+            </div>
+            
+            <div id="prediction-alert-box" class="prediction-badge-card text-left">
+              <div class="badge-icon-shield"><i id="prediction-icon" class="fa-solid fa-circle-check"></i></div>
+              <div class="badge-meta-content">
+                <span class="badge-context-title">Inference Engine Classification</span>
+                <h3 id="prediction-text-label">Processing Complete</h3>
+              </div>
+            </div>
+            
+            <div class="confidence-bar-block text-left">
+              <div class="confidence-meta-row">
+                <span class="conf-lbl-title">Inference Layer Confidence Index</span>
+                <span id="confidence-percentage-value" class="conf-val-mono">0.0%</span>
+              </div>
+              <div class="confidence-track"><div id="confidence-fill-width" class="confidence-fill-bar" style="width: 0%"></div></div>
+            </div>
+          </div>
+          
+          <div class="result-panel-right glass-strong text-left">
+            <div class="panel-header-border">
+              <span class="mono-section-tag">Diagnostics Summary Logs</span>
+              <h2>Workspace Session Summary</h2>
+            </div>
+            
+            <div class="patient-summary-list">
+              <div class="summary-item"><span class="summary-lbl">Target Full Name:</span><span id="res-pat-name" class="summary-val font-semibold">—</span></div>
+              <div class="summary-item"><span class="summary-lbl">Clinical Gender Index:</span><span id="res-pat-gender" class="summary-val">—</span></div>
+              <div class="summary-item"><span class="summary-lbl">Date of Birth Statement:</span><span id="res-pat-dob" class="summary-val">—</span></div>
+              <div class="summary-item"><span class="summary-lbl">Registered Phone Ref:</span><span id="res-pat-phone" class="summary-val">—</span></div>
+              <div class="summary-item"><span class="summary-lbl">Assigned Staff Clinician:</span><span id="res-pat-doc" class="summary-val font-semibold">—</span></div>
+            </div>
+            
+            <div class="clinical-findings-snippet mb-6">
+              <h4>Registered Intent Notes</h4>
+              <p id="res-pat-notes">No specialized clinical conditions mapped.</p>
+            </div>
+            
+            <div class="dashboard-action-foot flex gap-4">
+              <button type="button" id="btn-restart-suite" data-new-patient class="btn-ghost-custom flex-1 justify-center"><i class="fa-solid fa-rotate-left mr-2"></i>New Patient</button>
+              <button type="button" id="btn-view-report-anchor" class="btn-primary-custom flex-1 justify-center">Generate Formal Report <i class="fa-solid fa-file-contract ml-2"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 5: COMPUTER-GENERATED RADIOLOGY REPORT ARCHIVE -->
+      <section id="step-report" class="workflow-section hidden-element">
+        <div class="hospital-report-canvas text-left">
+          <div class="report-canvas-header">
+            <div class="hospital-identity">
+              <div class="hospital-logo-placeholder"><i class="fa-solid fa-clinic-medical"></i></div>
+              <div class="hospital-text-meta">
+                <h1>NEUROLOGICAL IMAGING RESEARCH NETWORK</h1>
+                <p>Computer-Assisted Tele-Radiology Automation Suite</p>
+              </div>
+            </div>
+            <div class="report-id-block">
+              <span class="rid-title">TRANSACTION LOG SECURITY HASH</span>
+              <span id="report-id-generated" class="rid-value">RAD-AI-00000-2026</span>
+            </div>
+          </div>
+          
+          <div class="report-demographics-grid">
+            <div class="demog-cell"><span class="demog-lbl">PATIENT FULL NAME</span><span id="rep-pat-name" class="demog-val text-gradient-style">—</span></div>
+            <div class="demog-cell"><span class="demog-lbl">RECORD SEX ID</span><span id="rep-pat-gender" class="demog-val">—</span></div>
+            <div class="demog-cell"><span class="demog-lbl">DATE OF BIRTH</span><span id="rep-pat-dob" class="demog-val">—</span></div>
+            <div class="demog-cell"><span class="demog-lbl">SUPERVISING CLINICIAN</span><span id="rep-pat-doc" class="demog-val">—</span></div>
+            <div class="demog-cell"><span class="demog-lbl">EXAMINATION TIMESTAMP</span><span id="rep-date" class="demog-val">—</span></div>
+            <div class="demog-cell"><span class="demog-lbl">SYSTEM MODEL CORE</span><span class="demog-val font-mono text-xs">VGG16 Classifier</span></div>
+          </div>
+          
+          <div class="report-body-narrative">
+            <div class="narrative-section">
+              <h3>I. PATIENT DETAILS &amp; REGISTERED CONTEXT</h3>
+              <p id="rep-indication-text">Patient details will be populated after classifier processing.</p>
+            </div>
+            <div class="narrative-section">
+              <h3>II. CLASSIFIER OUTPUT &amp; CLINICAL SUMMARY</h3>
+              <p id="rep-findings-text">Classifier output will be populated after processing.</p>
+            </div>
+            <div class="narrative-section">
+              <h3>III. CLASSIFIER IMPRESSION</h3>
+              <div class="impression-container-box">
+                <span id="rep-impression-badge" class="badge-pill">AWAITING CLASSIFIER OUTPUT</span>
+                <p id="rep-impression-text">The report is populated from the completed classifier result.</p>
+              </div>
+            </div>
+            <div class="narrative-section">
+              <h3>IV. RECOMMENDATION &amp; DISCLAIMER</h3>
+              <p id="rep-recommendation-text" style="white-space: pre-line;">Recommendation and disclaimer will be populated after processing.</p>
+            </div>
+          </div>
+          
+          <div class="report-signature-area">
+            <div class="signature-block">
+              <div class="digital-sig-placeholder"><span class="sig-script">VGG16 Classifier</span><span class="sig-verification-line">CLASSIFIER OUTPUT RECORDED</span></div>
+              <span class="sig-title-lbl">Automated Feature Vector Isolation Layer Signature</span>
+            </div>
+            <div class="signature-block">
+              <div class="digital-sig-placeholder countersig"><span class="sig-seal-text">AWAITING LICENSED VERIFICATION BLOCK</span></div>
+              <span class="sig-title-lbl">Attending Physician / Licensed Radiologist Verification Crypt-Stamp</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="report-export-actions">
+          <button type="button" data-new-patient class="btn-ghost-custom"><i class="fa-solid fa-rotate-left mr-2"></i>New Patient</button>
+          <button type="button" id="btn-action-print" class="btn-ghost-custom"><i class="fa-solid fa-print mr-2"></i>Print Physical Record</button>
+          <button type="button" id="btn-action-pdf" class="btn-primary-custom"><i class="fa-solid fa-file-pdf mr-2"></i>Compile & Export PDF Layout</button>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- ============ SYSTEM SITE FOOTER ============ -->
+  <footer class="relative mt-10 px-4 sm:px-6 pb-8">
+    <div class="max-w-7xl mx-auto glass-strong rounded-[2rem] px-7 sm:px-10 py-10 shadow-xl">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-left">
+        <div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="w-9 h-9 rounded-lg grad-bg flex items-center justify-center"><i class="fa-solid fa-brain text-white text-sm"></i></span>
+            <span class="font-display font-bold text-[var(--ink)]">Brain Radiology AI</span>
+          </div>
+          <p class="text-sm text-[var(--ink-soft)] leading-relaxed">AI-assisted structural tissue anomaly scanning pipelines, configured for integrated diagnostic support frameworks.</p>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-sm text-[var(--ink)] mb-4">System Links</p>
+          <ul class="space-y-2.5 text-sm text-[var(--ink-soft)]">
+            <li><a href="#home" class="hover:text-[var(--blue)] transition">Home Portal</a></li>
+            <li><a href="#about" class="hover:text-[var(--blue)] transition">About Platform</a></li>
+            <li><a href="#how-it-works" class="hover:text-[var(--blue)] transition">How It Works</a></li>
+            <li><a href="#workspace" class="hover:text-[var(--blue)] transition">Active Workspace</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-sm text-[var(--ink)] mb-4">Pipeline Protocol</p>
+          <ul class="space-y-2.5 text-sm text-[var(--ink-soft)]">
+            <li><i class="fa-solid fa-circle-nodes mr-2 text-[var(--blue)]"></i>Voxel Mapping Matrix</li>
+            <li><i class="fa-solid fa-fingerprint mr-2 text-[var(--violet)]"></i>Session Key Isolation</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-sm text-[var(--ink)] mb-4">Follow Research</p>
+          <div class="flex gap-3">
+            <a href="#" aria-label="Twitter" class="w-9 h-9 rounded-lg glass flex items-center justify-center hover:text-[var(--blue)] transition"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg glass flex items-center justify-center hover:text-[var(--blue)] transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-[var(--line)] mt-9 pt-6 text-center text-xs text-[var(--ink-soft)]">
+        &copy; 2026 Brain Radiology AI. Managed front-end developer pipeline framework suite. For exploratory decision architecture oversight operations only.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link Client Interface Action Engine Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Model,Total Parameters,Trainable Parameters,Non-Trainable Parameters,Total Layers,Trainable Layers,Frozen Layers,Model File Size MB,Model Path
+VGG16,14782916,7146628,7636288,,,,111.00676727294922,d:\Project-sem2\model_vgg16_v2.h5
+DenseNet121,7173316,948868,6224448,,,,35.445037841796875,d:\Project-sem2\model_densenet121.h5
+EfficientNet,4219175,1650404,2568771,,,,29.161163330078125,d:\Project-sem2\model_efficientnet.h5
+ResNet50,23858692,9185924,14672768,,,,161.49745178222656,d:\Project-sem2\model_resnet50.h5
+MobileNetV3Large,3123716,1072244,2051472,,,,20.770631790161133,d:\Project-sem2\model_mobilenetv3large.keras

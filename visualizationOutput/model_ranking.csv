@@ -1,0 +1,6 @@
+Model,Accuracy Rank,F1 Rank,Recall Rank,Precision Rank,Mean Rank
+VGG16,1.0,1.0,1.0,1.0,1.0
+MobileNetV3Large,2.0,2.0,2.0,2.0,2.0
+DenseNet121,3.0,2.0,3.0,2.0,2.5
+EfficientNet,3.0,2.0,3.0,2.0,2.5
+ResNet50,3.0,2.0,3.0,5.0,3.25

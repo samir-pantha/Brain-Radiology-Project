@@ -1,0 +1,6 @@
+Model,Augmentation Used,Operations,Training Images,Actual Epochs,Steps per Epoch,Samples Processed per Epoch,Augmented Samples Processed,Images Omitted per Epoch,Augmented Files Saved to Disk,Augmentation Applied in Reported Test Evaluation
+VGG16,True,"Random brightness, Random contrast",5600,15,280,5600,84000,0,False,True
+DenseNet121,True,"Random brightness, Random contrast",5600,15,280,5600,84000,0,False,True
+EfficientNet,True,"Random brightness, Random contrast",5600,15,280,5600,84000,0,False,True
+ResNet50,True,"Random brightness, Random contrast",5600,15,280,5600,84000,0,False,True
+MobileNetV3Large,True,"Random brightness, Random contrast",5600,15,280,5600,84000,0,False,True

@@ -1,0 +1,76 @@
+Epoch,Model,Phase,Training Accuracy,Training Loss,Learning Rate,Epoch Time Seconds,Phase Configured Maximum
+1,VGG16,Frozen Feature Extraction,0.7011,0.8251,,1927.0,5
+2,VGG16,Frozen Feature Extraction,0.8538,0.3792,,1941.0,5
+3,VGG16,Frozen Feature Extraction,0.8866,0.3057,,1701.0,5
+4,VGG16,Frozen Feature Extraction,0.9082,0.2364,,1510.0,5
+5,VGG16,Frozen Feature Extraction,0.9172,0.2263,,1037.0,5
+6,VGG16,Fine-Tuning,0.9323,0.1776,1e-05,25732.0,10
+7,VGG16,Fine-Tuning,0.963,0.1091,1e-05,2867.0,10
+8,VGG16,Fine-Tuning,0.9778,0.0687,1e-05,1458.0,10
+9,VGG16,Fine-Tuning,0.9845,0.0544,1e-05,1659.0,10
+10,VGG16,Fine-Tuning,0.9901,0.0371,1e-05,2373.0,10
+11,VGG16,Fine-Tuning,0.9935,0.0298,1e-05,1666.0,10
+12,VGG16,Fine-Tuning,0.9953,0.0253,1e-05,1559.0,10
+13,VGG16,Fine-Tuning,0.9936,0.021,1e-05,1201.0,10
+14,VGG16,Fine-Tuning,0.9969,0.0162,1e-05,1296.0,10
+15,VGG16,Fine-Tuning,0.9977,0.0134,1e-05,1344.0,10
+1,DenseNet121,Frozen Feature Extraction,0.7673,0.6225,,715.0,5
+2,DenseNet121,Frozen Feature Extraction,0.901,0.2617,,603.0,5
+3,DenseNet121,Frozen Feature Extraction,0.9267,0.1916,,582.0,5
+4,DenseNet121,Frozen Feature Extraction,0.9357,0.1776,,591.0,5
+5,DenseNet121,Frozen Feature Extraction,0.9475,0.1398,,560.0,5
+6,DenseNet121,Fine-Tuning,0.9494,0.13,1e-05,537.0,10
+7,DenseNet121,Fine-Tuning,0.9645,0.1009,1e-05,508.0,10
+8,DenseNet121,Fine-Tuning,0.9632,0.1026,1e-05,529.0,10
+9,DenseNet121,Fine-Tuning,0.9628,0.0921,1e-05,639.0,10
+10,DenseNet121,Fine-Tuning,0.9704,0.0845,1e-05,560.0,10
+11,DenseNet121,Fine-Tuning,0.9749,0.0791,1e-05,504.0,10
+12,DenseNet121,Fine-Tuning,0.9741,0.0762,1e-05,420.0,10
+13,DenseNet121,Fine-Tuning,0.9723,0.082,1e-05,488.0,10
+14,DenseNet121,Fine-Tuning,0.974,0.0728,1e-05,716.0,10
+15,DenseNet121,Fine-Tuning,0.9782,0.0646,1e-05,577.0,10
+1,EfficientNet,Frozen Feature Extraction,0.7283,0.8179,,323.0,5
+2,EfficientNet,Frozen Feature Extraction,0.8707,0.3697,,,5
+3,EfficientNet,Frozen Feature Extraction,0.8911,0.2942,,,5
+4,EfficientNet,Frozen Feature Extraction,0.9112,0.2384,,,5
+5,EfficientNet,Frozen Feature Extraction,0.9216,0.2077,,,5
+6,EfficientNet,Fine-Tuning,0.9361,0.1655,1e-05,309.0,10
+7,EfficientNet,Fine-Tuning,0.9467,0.1356,1e-05,293.0,10
+8,EfficientNet,Fine-Tuning,0.9452,0.1512,1e-05,309.0,10
+9,EfficientNet,Fine-Tuning,0.9437,0.138,1e-05,,10
+10,EfficientNet,Fine-Tuning,0.9531,0.1242,1e-05,,10
+11,EfficientNet,Fine-Tuning,0.9527,0.1251,1e-05,,10
+12,EfficientNet,Fine-Tuning,0.9655,0.1015,1e-05,,10
+13,EfficientNet,Fine-Tuning,0.9607,0.1087,1e-05,286.0,10
+14,EfficientNet,Fine-Tuning,0.9642,0.097,1e-05,285.0,10
+15,EfficientNet,Fine-Tuning,0.9624,0.0955,1e-05,283.0,10
+1,ResNet50,Frozen Feature Extraction,0.783,0.6756,,693.0,5
+2,ResNet50,Frozen Feature Extraction,0.9145,0.238,,972.0,5
+3,ResNet50,Frozen Feature Extraction,0.9374,0.1665,,1117.0,5
+4,ResNet50,Frozen Feature Extraction,0.9563,0.115,,1039.0,5
+5,ResNet50,Frozen Feature Extraction,0.9619,0.1005,,910.0,5
+6,ResNet50,Fine-Tuning,0.9833,0.0511,1e-05,961.0,10
+7,ResNet50,Fine-Tuning,0.9887,0.0357,1e-05,715.0,10
+8,ResNet50,Fine-Tuning,0.9925,0.0285,1e-05,754.0,10
+9,ResNet50,Fine-Tuning,0.9956,0.0182,1e-05,818.0,10
+10,ResNet50,Fine-Tuning,0.9951,0.0181,1e-05,789.0,10
+11,ResNet50,Fine-Tuning,0.9948,0.0192,1e-05,796.0,10
+12,ResNet50,Fine-Tuning,0.9971,0.0131,1e-05,1405.0,10
+13,ResNet50,Fine-Tuning,0.9967,0.0127,1e-05,1051.0,10
+14,ResNet50,Fine-Tuning,0.9987,0.0076,1e-05,831.0,10
+15,ResNet50,Fine-Tuning,0.9986,0.007,1e-05,749.0,10
+1,MobileNetV3Large,Frozen Feature Extraction,0.7517,0.6922,,,5
+2,MobileNetV3Large,Frozen Feature Extraction,0.9064,0.2525,,,5
+3,MobileNetV3Large,Frozen Feature Extraction,0.923,0.2004,,,5
+4,MobileNetV3Large,Frozen Feature Extraction,0.9458,0.146,,,5
+5,MobileNetV3Large,Frozen Feature Extraction,0.9488,0.1415,,,5
+6,MobileNetV3Large,Fine-Tuning,0.9566,0.1159,1e-05,,10
+7,MobileNetV3Large,Fine-Tuning,0.962,0.0914,1e-05,,10
+8,MobileNetV3Large,Fine-Tuning,0.9666,0.0858,1e-05,,10
+9,MobileNetV3Large,Fine-Tuning,0.9619,0.0877,1e-05,,10
+10,MobileNetV3Large,Fine-Tuning,0.9668,0.0881,1e-05,,10
+11,MobileNetV3Large,Fine-Tuning,0.9708,0.0813,1e-05,,10
+12,MobileNetV3Large,Fine-Tuning,0.9739,0.0667,1e-05,,10
+13,MobileNetV3Large,Fine-Tuning,0.9784,0.0594,1e-05,,10
+14,MobileNetV3Large,Fine-Tuning,0.9781,0.0594,1e-05,,10
+15,MobileNetV3Large,Fine-Tuning,0.9764,0.0595,1e-05,3.0,10

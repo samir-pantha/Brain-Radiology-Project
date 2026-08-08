@@ -1,0 +1,6 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted Precision,Weighted Recall,Weighted F1,Macro AUC,Weighted AUC
+VGG16,0.94,0.94,0.94,0.94,,,,,
+DenseNet121,0.92,0.93,0.92,0.92,,,,,
+EfficientNet,0.92,0.93,0.92,0.92,,,,,
+ResNet50,0.92,0.92,0.92,0.92,,,,,
+MobileNetV3Large,0.93,0.93,0.93,0.92,,,,,

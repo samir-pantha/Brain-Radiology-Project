@@ -85,26 +85,43 @@ Brain-Radiology-Project/
 
 ## ⚙️ Setup & Installation
 
-```bash
+**Prerequisites:**
+- Python 3.13
+- The `model_efficientnet.h5` file must remain in the repository root
+- Optional: an [OpenRouter API key](https://openrouter.ai/keys) for AI-generated reports (not required — falls back to a deterministic report if missing or if the request fails)
+
+```powershell
 # Clone the repository
 git clone https://github.com/samir-pantha/Brain-Radiology-Project.git
 cd Brain-Radiology-Project
 
+# Create and activate a virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
 # Install backend dependencies
-cd backend
-pip install -r requirements.txt
+pip install -r backend\requirements.txt
 
-# Set up environment variables (see .env.example)
-# OPENROUTER_API_KEY=your_key_here
+# (Optional) Set your OpenRouter API key for AI-generated reports
+$env:OPENROUTER_API_KEY = "your_openrouter_key"
 
-# Run the backend
-uvicorn main:app --reload
+# (Optional) Override the default model (google/gemma-3-4b-it:free)
+$env:OPENROUTER_MODEL = "provider/model-name"
+
+# Run the backend server
+uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000
 
 # Open the frontend
-cd ../frontend
+cd frontend
 # open index.html in your browser, or serve it with a local dev server
 ```
 
+**API endpoints:**
+- `GET /health` — server readiness and model load status
+- `POST /predict` — accepts a single MRI image (`image` field, multipart form-data, JPEG/PNG only, up to 25MB)
+- `POST /generate-report` — accepts patient details and the prediction result as JSON; never receives the image itself
+
+The backend and OpenRouter key stay server-side and are never exposed to the browser.
 ---
 
 ## 🔭 Future Scope

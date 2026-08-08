@@ -61,6 +61,25 @@ Each model was evaluated using **accuracy, precision, recall, F1-score, ROC-AUC,
 ```
 Brain-Radiology-Project/
 ├── backend/                                    # FastAPI backend (inference + report generation)
+├── app/
+│   ├── core/
+│   │   ├── __init__.py
+│   │   └── config.py                # App configuration and settings
+│   ├── models/
+│   │   └── class_labels.json        # Class label mapping (glioma, meningioma, notumor, pituitary)
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── prediction.py            # Pydantic request/response schemas
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── image_processing.py      # Image validation, resizing, preprocessing
+│   │   ├── inference.py             # Model loading and prediction logic
+│   │   └── report_generator.py      # OpenRouter AI report generation + fallback
+│   ├── __init__.py
+│   └── main.py                      # FastAPI app entry point and routes
+├── README.md
+└── requirements.txt
+
 ├── frontend/                                   # Web application frontend
 │   ├── index.html
 │   ├── script.js
